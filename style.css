@@ -1,0 +1,674 @@
+/* ==========================================================================
+   ADHYATM — MINIMAL DARK HI-FI PORTFOLIO
+   Exact aesthetic from user reference screenshots:
+   - Screen 1: Profile card with pfp.png, tool badge & monochrome icons
+   - Screen 2: Introduction with Discord status (pfp) and live analog/digital clock
+   - Screen 3: Kanye West - Runaway with official runaway.png & runaway.mp3
+   ========================================================================== */
+
+:root {
+  --bg-dark: #161616;
+  --card-bg: #1d1d1d;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-border-hover: rgba(255, 255, 255, 0.16);
+
+  --text-white: #ffffff;
+  --text-primary: #ededed;
+  --text-secondary: #8c8c8c;
+  --text-muted: #5e5e5e;
+
+  --accent-red: #ef4444;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   VERTICAL 3-DOT NAVIGATION (Fixed on right edge)
+   ========================================================================== */
+
+.side-dots {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.dot-btn {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.dot-btn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.dot-btn.active {
+  background-color: #ffffff;
+  height: 6px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* ==========================================================================
+   SNAP SCROLL CONTAINER
+   ========================================================================== */
+
+.snap-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+.snap-section {
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+/* ==========================================================================
+   SCREEN 1: PROFILE CARD (media_1791213059622.png)
+   ========================================================================== */
+
+.profile-card-mini {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-card-mini:hover {
+  border-color: var(--card-border-hover);
+}
+
+/* Avatar Box with user's pfp.png */
+.avatar-box {
+  width: 115px;
+  height: 115px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111215;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Profile Info */
+.profile-info-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-right: 1.5rem;
+}
+
+.name-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.user-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-white);
+}
+
+.tools-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c0c0c0;
+}
+
+.user-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.blinking-cursor {
+  font-weight: 300;
+  color: #aaaaaa;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.social-icons-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.45rem;
+}
+
+.icon-link {
+  color: #9c9c9c;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.icon-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.scroll-more-prompt {
+  position: absolute;
+  bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.scroll-more-prompt:hover {
+  color: #ffffff;
+}
+
+.down-arrow {
+  font-size: 0.85rem;
+  animation: float-down 1.8s infinite ease-in-out;
+}
+
+@keyframes float-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+/* ==========================================================================
+   SCREEN 2: INTRODUCTION & WIDGETS (media_1791213070575.png)
+   ========================================================================== */
+
+.intro-container {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-white);
+}
+
+.intro-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.intro-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.intro-list li {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.bullet-key {
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.bullet-val {
+  color: #b5b5b5;
+}
+
+.link-underlined {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+.link-underlined:hover {
+  text-decoration-color: #ffffff;
+}
+
+/* Widgets Grid: Discord + Clock */
+.intro-widgets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.widget-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 1.35rem 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Discord Widget with user's pfp */
+.discord-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.discord-avatar-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.discord-status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2.5px solid var(--card-bg);
+}
+
+.discord-status.dnd {
+  background-color: var(--accent-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.discord-status.dnd::after {
+  content: '';
+  width: 5px;
+  height: 1.5px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.discord-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.discord-handle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.discord-activity {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Analog Clock Widget */
+.analog-clock-wrap {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+#analog-clock {
+  width: 56px;
+  height: 56px;
+}
+
+.clock-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.digital-time {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-white);
+}
+
+.clock-date {
+  font-size: 0.74rem;
+  color: #b5b5b5;
+}
+
+.clock-sub {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.timezone-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SCREEN 3: KANYE WEST - RUNAWAY & LYRICS (media_1791213078270.png)
+   ========================================================================== */
+
+.music-card-large {
+  width: 100%;
+  max-width: 760px;
+  background: rgba(28, 28, 28, 0.78);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  padding: 2.2rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Ambient glow in card background matching MBDTF red */
+.music-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 12% 18%, rgba(214, 31, 31, 0.22), transparent 45%),
+    radial-gradient(circle at 85% 70%, rgba(245, 158, 11, 0.12), transparent 45%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Player Top Bar */
+.music-player-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.album-thumb {
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.album-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.player-middle {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.track-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.track-title-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.now-playing-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-white);
+}
+
+.now-playing-artist {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.ctrl-btn {
+  background: transparent;
+  border: none;
+  color: #c5c5c5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.ctrl-btn:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.ctrl-btn:active {
+  transform: scale(0.95);
+}
+
+/* Scrubber / Progress */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.time-stamp {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  min-width: 28px;
+}
+
+.progress-bar-track {
+  flex-grow: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 999px;
+  transition: width 0.15s linear;
+}
+
+/* Synced Blurred Lyrics Display */
+.lyrics-scroll-box {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  max-height: 270px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding: 0.5rem 0;
+}
+
+.lyrics-scroll-box::-webkit-scrollbar {
+  display: none;
+}
+
+.lyric-line {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.35);
+  filter: blur(1.5px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.lyric-line:hover {
+  filter: blur(0.5px);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.lyric-line.active {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  filter: blur(0);
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: #252525;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .intro-widgets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card-mini {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+  }
+
+  .profile-info-mini {
+    padding-right: 0;
+    align-items: center;
+  }
+
+  .music-card-large {
+    padding: 1.5rem;
+  }
+
+  .side-dots {
+    right: 0.75rem;
+  }
+}
