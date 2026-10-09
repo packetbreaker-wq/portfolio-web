@@ -1,31 +1,43 @@
 # Adhyatm Shaswat — Portfolio
 
-A minimal, dark, hi-fi personal website inspired by guns.lol / minimalist profile layouts.
+Minimalist, tactile portfolio built with **Claymorphism** & **Neumorphism** design systems. Soft 3D extruded surfaces, double-bevel light modeling, mechanical keycap hardware deck, and zero corporate bloat.
+
+Live at: **[adhyatmshaswat.cyou](https://adhyatmshaswat.cyou)**
 
 ---
 
-## ⚡ Architecture & Sections
+## ⚡ Design System & Features
 
-- **Screen 1: Profile**:
-  - Custom user PFP (`pfp.png`)
-  - Name: `Adhyatm` with developer badge
-  - Bio: `coder & Ye for life |` with dynamic typing effect
-  - Monochrome links: Globe ([`packetbreaker.xyz`](https://packetbreaker.xyz)), GitHub ([`packetbreaker-wq`](https://github.com/packetbreaker-wq)), and 1-click Email copy for `xnazhx.dev@gmail.com`.
-  
-- **Screen 2: Introduction & Widgets**:
-  - Introduction bio listing your two real projects: [`packetbreaker.xyz`](https://packetbreaker.xyz) and [`madebykiyoto.vercel.app`](https://madebykiyoto.vercel.app)
-  - Interests: Coding, technology, and **Ye for life**
-  - Theme song: **Runaway — Kanye West**
-  - Discord status card with custom PFP and DND indicator
-  - Real-time analog clock with ticking red second hand and digital timezone indicator
+- **Claymorphism & Neumorphism**:
+  - Deep matte obsidian slate background (`#101114`) with sculpted clay cards (`#181a20`).
+  - Realistic light physics: dual inner bevel highlights + multi-layered soft drop shadows.
+  - Interactive 3D micro-tilt with spring physics on mouse movement.
+  - Tactile mechanical press depression states on all buttons and keycaps.
 
-- **Screen 3: Music Player & Synced Blurred Lyrics**:
-  - Official Kanye West *My Beautiful Dark Twisted Fantasy* album artwork (`runaway.png`)
-  - Full official studio track: **Kanye West — Runaway** (`runaway.mp3`, 9:08 duration)
-  - Interactive player with Play/Pause, scrubber, and real-time synchronized blurred lyrics (clicking any line seeks the track directly to that timestamp)
+- **00 · Sculpted Hero Workstation**:
+  - Sovereign identity: *"Adhyatm Shaswat · coder & Ye for life"*.
+  - Sculpted clay avatar card housing real car PFP (`@packetbreaker-wq`).
+  - 1-click clipboard copy for `contact@adhyatmshaswat.cyou` with toast confirmation.
+
+- **01 · Selected Works (Tactile Master Panels)**:
+  - **PacketBreaker**: Autonomous agentic desktop IDE for Windows (`packetbreaker.xyz`).
+  - **KiYOTO**: Creative software studio & lab (`madebykiyoto.vercel.app`).
+  - Inset beveled display wells with real screenshot previews and dedicated case study pages (`packetbreaker.html` and `kiyoto.html`).
+
+- **02 · Hardware Arsenal (Tactile Keycaps)**:
+  - Extruded mechanical keyboard keycaps with SVG vector icons:
+    TypeScript, Python, Node.js, PostgreSQL, Docker, Linux, WebGL/Three.js, React, Tailwind, Vite.
+  - Tactile physical press-down on click.
+
+- **03 · Core Principles**:
+  - Clean minimalist cards: Local Sovereignty, Tactile Precision, Zero AI Slop.
+
+- **04 · Command Console & Contact**:
+  - Direct email copy console with haptic feedback.
+  - Fast links: GitHub, PacketBreaker, KiYOTO, custom domain.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Architecture
 
-Simply open [`index.html`](file:///c:/Users/mbsbo/Desktop/portfolio%20website/index.html) in any browser. No build steps or external dependencies required.
+Pure HTML5, CSS3, and ES6 JavaScript. Blazingly fast, zero external dependencies, no frameworks needed. Ready for instant deployment on Vercel.

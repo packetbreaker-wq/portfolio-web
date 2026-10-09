@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>PacketBreaker — Case Study · Adhyatm Shaswat</title>
+  <meta name="description" content="PacketBreaker: Autonomous agentic desktop IDE for Windows. Built by Adhyatm Shaswat.">
+  <meta name="theme-color" content="#0d0e11">
+
+  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+
+  <!-- Humanist Typography: Plus Jakarta Sans & Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CUSTOM MAGNETIC CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- FLOATING CLAY DOCK -->
+  <header class="dock-header">
+    <nav class="clay-dock" aria-label="Navigation Dock">
+      <a href="index.html" class="dock-brand" aria-label="Home">
+        <svg class="dock-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </a>
+      <div class="dock-links">
+        <a href="index.html" class="dock-link">Index</a>
+        <a href="kiyoto.html" class="dock-link">KiYOTO</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-wrapper">
+    
+    <!-- CASE STUDY MAIN CARD -->
+    <section class="hero-intro-card clay-tilt-card" style="margin-top: 10px;">
+      <div class="project-top-meta">
+        <span class="project-index-pill">01 / Case Study</span>
+        <span class="project-status-pill">Desktop IDE · Windows Native</span>
+      </div>
+
+      <div>
+        <h1 class="hero-main-title" style="margin: 14px 0;">PacketBreaker</h1>
+        <p class="hero-bio" style="max-width: 820px; font-size: 1.2rem;">
+          Your prompt, your keys, your machine. An autonomous agentic desktop IDE for Windows that plans, builds, and edits full-stack software directly on your local system instead of a closed external cloud.
+        </p>
+      </div>
+
+      <div class="hero-actions-row">
+        <a href="https://www.packetbreaker.xyz" target="_blank" rel="noopener" class="btn-clay-primary">
+          <span>Launch packetbreaker.xyz</span>
+        </a>
+        <a href="https://github.com/packetbreaker-wq" target="_blank" rel="noopener" class="btn-clay-secondary">
+          <span>GitHub Repository</span>
+        </a>
+        <a href="index.html" class="btn-clay-secondary">
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FULL SHOWCASE MEDIA WELL -->
+    <div class="project-preview-side" style="padding: 18px; border-radius: 32px;">
+      <img src="assets/packetbreaker.jpg" alt="PacketBreaker Interface" class="project-display-img" style="border-radius: 20px;">
+    </div>
+
+    <!-- SPECS GRID -->
+    <section>
+      <div class="section-label-row">
+        <span class="section-eyebrow">Architecture</span>
+        <h2 class="section-title">Engineered Capabilities</h2>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">01 · Sovereignty</span>
+          <h3 class="principle-heading">Machine-Native Execution</h3>
+          <p class="principle-body">
+            Runs directly on the Windows host. Edits files in real-time, runs native terminal build commands, spins up background dev servers, and verifies compile errors locally.
+          </p>
+        </div>
+
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">02 · Autonomy</span>
+          <h3 class="principle-heading">Multi-Agent Planner</h3>
+          <p class="principle-body">
+            Breaks complex user prompts into discrete engineering milestones. Invokes parallel research and write subagents to inspect codebases and synthesize edits with zero token waste.
+          </p>
+        </div>
+
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">03 · Privacy</span>
+          <h3 class="principle-heading">Bring Your Own Key (BYOK)</h3>
+          <p class="principle-body">
+            Zero telemetry extortion. You supply your own API keys directly stored in your secure Windows credential vault. No recurring cloud markups or third-party servers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="clay-console-card">
+      <div class="console-top-split">
+        <div>
+          <span class="section-eyebrow">Next Project</span>
+          <h2 class="console-headline" style="margin-top: 10px;">KiYOTO Studio</h2>
+          <p class="console-sub">Creative software studio and experimental lab.</p>
+        </div>
+
+        <div class="console-actions">
+          <a href="kiyoto.html" class="btn-clay-primary">
+            <span>Explore KiYOTO</span>
+          </a>
+          <a href="index.html" class="btn-clay-secondary">
+            <span>Home</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="clay-toast" role="status" aria-live="polite">
+    <span class="toast-led"></span>
+    <span id="toast-text">Copied to clipboard</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

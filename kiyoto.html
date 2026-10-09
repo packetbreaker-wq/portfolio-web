@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KiYOTO Studio — Case Study · Adhyatm Shaswat</title>
+  <meta name="description" content="KiYOTO: Creative Software Studio & Experimental Lab. Built by Adhyatm Shaswat.">
+  <meta name="theme-color" content="#0d0e11">
+
+  <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
+
+  <!-- Humanist Typography: Plus Jakarta Sans & Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CUSTOM MAGNETIC CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- FLOATING CLAY DOCK -->
+  <header class="dock-header">
+    <nav class="clay-dock" aria-label="Navigation Dock">
+      <a href="index.html" class="dock-brand" aria-label="Home">
+        <svg class="dock-brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </a>
+      <div class="dock-links">
+        <a href="index.html" class="dock-link">Index</a>
+        <a href="packetbreaker.html" class="dock-link">PacketBreaker</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-wrapper">
+    
+    <!-- CASE STUDY MAIN CARD -->
+    <section class="hero-intro-card clay-tilt-card" style="margin-top: 10px;">
+      <div class="project-top-meta">
+        <span class="project-index-pill">02 / Case Study</span>
+        <span class="project-status-pill">Creative Studio &amp; Lab</span>
+      </div>
+
+      <div>
+        <h1 class="hero-main-title" style="margin: 14px 0;">KiYOTO</h1>
+        <p class="hero-bio" style="max-width: 820px; font-size: 1.2rem;">
+          The creative software studio and experimental lab behind PacketBreaker. Crafting sovereign digital experiences, bespoke shaders, and tactile tools with uncompromising taste.
+        </p>
+      </div>
+
+      <div class="hero-actions-row">
+        <a href="https://madebykiyoto.vercel.app" target="_blank" rel="noopener" class="btn-clay-primary">
+          <span>Visit madebykiyoto.vercel.app</span>
+        </a>
+        <a href="https://github.com/packetbreaker-wq" target="_blank" rel="noopener" class="btn-clay-secondary">
+          <span>GitHub Profile</span>
+        </a>
+        <a href="index.html" class="btn-clay-secondary">
+          <span>Back to Portfolio</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FULL SHOWCASE MEDIA WELL -->
+    <div class="project-preview-side" style="padding: 18px; border-radius: 32px;">
+      <img src="assets/kiyoto.jpg" alt="KiYOTO Creative Studio" class="project-display-img" style="border-radius: 20px;">
+    </div>
+
+    <!-- SPECS GRID -->
+    <section>
+      <div class="section-label-row">
+        <span class="section-eyebrow">Ethos &amp; R&amp;D</span>
+        <h2 class="section-title">Design Engineering</h2>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">01 · Aesthetics</span>
+          <h3 class="principle-heading">Tactile Art Direction</h3>
+          <p class="principle-body">
+            Rejecting generic corporate templates and AI slop. Every interface is constructed from bespoke typography, physical light modeling, and intentional micro-interactions.
+          </p>
+        </div>
+
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">02 · Shaders</span>
+          <h3 class="principle-heading">WebGL &amp; Interaction Math</h3>
+          <p class="principle-body">
+            Engineering raw GLSL fragment shaders, procedural noise meshes, and spring physics that react organically to user cursor velocity and tactile inputs.
+          </p>
+        </div>
+
+        <div class="principle-card clay-tilt-card">
+          <span class="principle-badge">03 · Incubation</span>
+          <h3 class="principle-heading">Product Factory</h3>
+          <p class="principle-body">
+            Serving as the software lab where autonomous agentic software, developer productivity tools, and physical digital applications are conceived and deployed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAV -->
+    <div class="clay-console-card">
+      <div class="console-top-split">
+        <div>
+          <span class="section-eyebrow">Previous Project</span>
+          <h2 class="console-headline" style="margin-top: 10px;">PacketBreaker IDE</h2>
+          <p class="console-sub">Autonomous agentic desktop IDE for Windows.</p>
+        </div>
+
+        <div class="console-actions">
+          <a href="packetbreaker.html" class="btn-clay-primary">
+            <span>Explore PacketBreaker</span>
+          </a>
+          <a href="index.html" class="btn-clay-secondary">
+            <span>Home</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="clay-toast" role="status" aria-live="polite">
+    <span class="toast-led"></span>
+    <span id="toast-text">Copied to clipboard</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
