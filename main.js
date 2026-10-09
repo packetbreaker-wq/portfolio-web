@@ -1,55 +1,12 @@
 /**
  * ADHYATM SHASWAT — CLAYMORPHISM CONTROLLER
- * Tactile 3D Tilt Physics · Dynamic Light Sheen · Scroll Entrance Reveal · Magnetic Cursor
+ * Tactile 3D Tilt Physics · Dynamic Light Sheen · Scroll Entrance Reveal
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     1. TACTILE MAGNETIC CURSOR
-     ========================================================================== */
-  const cursorDot = document.getElementById('cursor-dot');
-  const cursorRing = document.getElementById('cursor-ring');
-
-  if (cursorDot && cursorRing && window.matchMedia('(pointer: fine)').matches) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
-
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-    }, { passive: true });
-
-    function renderCursor() {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
-      requestAnimationFrame(renderCursor);
-    }
-    requestAnimationFrame(renderCursor);
-
-    const interactiveEls = document.querySelectorAll('a, button, .clay-keycap, .clay-tilt-card, .dock-link');
-    interactiveEls.forEach((el) => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-
-    document.addEventListener('mouseleave', () => {
-      cursorDot.style.opacity = '0';
-      cursorRing.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      cursorDot.style.opacity = '1';
-      cursorRing.style.opacity = '1';
-    });
-  }
-
-
-  /* ==========================================================================
-     2. SCROLL ENTRANCE REVEAL ANIMATIONS
+     1. SCROLL ENTRANCE REVEAL ANIMATIONS
      ========================================================================== */
   const animatedElements = document.querySelectorAll('.hero-intro-card, .hero-avatar-card, .project-clay-card, .clay-keycap, .principle-card, .clay-console-card, .section-label-row');
   
